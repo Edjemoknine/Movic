@@ -95,7 +95,10 @@ const Home = () => {
         />
         {/* ****************************** TV Shows********************************* */}
 
-        <div className="w-full mt-10 relative h-[600px]" key={show?.id}>
+        <div
+          className="w-full mt-10 relative md:h-[600px] h-[350px]"
+          key={show?.id}
+        >
           <img
             src={`https://image.tmdb.org/t/p/original${show?.backdrop_path}`}
             alt="Shoes"
@@ -107,7 +110,7 @@ const Home = () => {
               {show?.name}
             </h1>
             <div className="flex justify-between items-center">
-              <p className="max-w-xs md:max-w-xl">
+              <p className="max-w-xs pr-14 md:max-w-xl">
                 {show?.overview?.substring(0, 150)}
               </p>
               <div className="flex-1 hidden md:flex  justify-center">

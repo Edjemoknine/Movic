@@ -54,7 +54,7 @@ const Navbar = () => {
         scroll && "bg-black shadow-2xl"
       } fixed py-4 z-50 w-full top-0 left-0`}
     >
-      <nav className="max-w-6xl mx-auto px-8 flex justify-between items-center">
+      <nav className="max-w-6xl mx-auto px-8 flex justify-between items-center gap-6">
         <Link to={"/"}>
           {" "}
           <h1 className="text-2xl text-red-500 font-semibold">Movico</h1>

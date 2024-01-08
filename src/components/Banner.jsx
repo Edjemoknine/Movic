@@ -38,10 +38,10 @@ const Banner = ({ data, isloading }) => {
                 {card?.data?.title}
               </h1>
               <div className="flex justify-between items-center">
-                <p className="max-w-xs md:max-w-xl">
+                <p className="max-w-xs sm:max-w-sm md:max-w-xl">
                   {card?.data?.overview?.substring(0, 150)}
                 </p>
-                <div className="flex-1 hidden sm:flex  justify-center">
+                <div className="flex-1 hidden md:flex  justify-center">
                   <div className="flex items-center duration-300 group cursor-pointer gap-6">
                     <PlayCircle
                       size={80}
@@ -66,7 +66,7 @@ const Banner = ({ data, isloading }) => {
                 <button className="bg-red-500 w-fit px-4 py-2 text-wrap font-semibold text-white">
                   <Link to={`/detail/${card?.data?.id}`}>Play Now</Link>
                 </button>
-                <div className="flex sm:hidden items-center duration-300 group cursor-pointer gap-6">
+                <div className="flex md:hidden items-center duration-300 group cursor-pointer gap-6">
                   <PlayCircle
                     size={30}
                     className="group-hover:text-red-500 duration-300"
