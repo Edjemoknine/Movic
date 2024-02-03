@@ -1,3 +1,13 @@
+// function SamplePrevArrow(props) {
+//   const { className, style, onClick } = props;
+//   return (
+//     <div
+//       className={className}
+//       style={{ ...style, display: "block", background: "green" }}
+//       onClick={onClick}
+//     />
+//   );
+// }
 export const Cardsettings = {
   dots: false,
   infinite: true,
@@ -6,6 +16,7 @@ export const Cardsettings = {
   slidesToShow: 6,
   slidesToScroll: 6,
   initialSlide: 0,
+
   responsive: [
     {
       breakpoint: 1024,
@@ -42,6 +53,8 @@ export const VidSettings = {
   slidesToShow: 6,
   slidesToScroll: 6,
   initialSlide: 0,
+  // nextArrow: <NextArrow />,
+  // prevArrow: <PrevArrow />,
   responsive: [
     {
       breakpoint: 1024,
@@ -80,4 +93,6 @@ export const Bannersettings = {
   autoplaySpeed: 7000,
   cssEase: "linear",
   arrows: false,
+  // nextArrow: <NextArrow />,
+  // prevArrow: <PrevArrow />,
 };

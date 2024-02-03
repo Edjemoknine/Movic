@@ -8,22 +8,27 @@ import {
   useGetTopMovie,
   useGetUpComingMovie,
 } from "../api/api";
-import CardSlider from "../components/Slider";
-import { Cardsettings } from "../utils/sliderSetting";
+import CardSlider, {
+  SampleNextArrow,
+  SamplePrevArrow,
+} from "../components/Slider";
+// import { Cardsettings } from "../utils/sliderSetting";
 import Banner from "../components/Banner";
 import { memo } from "react";
 import { Link } from "react-router-dom";
 import { PlayCircle } from "lucide-react";
 import Slider from "react-slick";
 import TvCard from "../components/TvCard";
+import { useState } from "react";
 
 const Home = () => {
+  const [page, setPage] = useState(1);
+  const [genre, setGenre] = useState("");
   const { data: tv } = useQuery({
-    queryKey: ["series"],
-    queryFn: () => GetDiscoverTV(1),
-    keepPreviousData: true,
+    queryKey: ["Shows", page, genre],
+    queryFn: () => GetDiscoverTV(page, genre),
   });
-
+  // console.log(tv);
   const { data: OnAir } = useGetAir();
   const { data: TopRTv } = useGetTOPR();
 
@@ -31,13 +36,13 @@ const Home = () => {
   const { data: topRated } = useGetTopMovie(1);
   const { data: playingNow } = useGetPlayMovie(1);
   const { data: upcoming, isLoading } = useGetUpComingMovie(1);
-  const show = tv?.results[0];
+  const show = topRated?.results[0];
   return (
     <>
       {/* <Suspense fallback={<BannerSkelton />}> */}
       <Banner data={data} isloading={isLoading} />
       {/* </Suspense> */}
-      <section className="max-w-6xl mx-auto px-8 pb-10 ">
+      <section className=" px-8 pb-10 ">
         <div className="flex items-center justify-between">
           <h1 className="my-6 text-2xl font-semibold">Upcoming Movies</h1>
           <Link
@@ -203,3 +208,40 @@ const Home = () => {
 };
 
 export default memo(Home);
+const Cardsettings = {
+  dots: false,
+  infinite: true,
+  lazy: true,
+  speed: 2000,
+  slidesToShow: 6,
+  slidesToScroll: 6,
+  initialSlide: 0,
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
