@@ -26,7 +26,7 @@ const Banner = ({ data, isloading }) => {
     <section>
       <Slider {...Bannersettings}>
         {Details?.map((card, i) => (
-          <div className="w-full relative h-[600px]" key={i}>
+          <div className="w-full relative h-[800px]" key={i}>
             <img
               src={`https://image.tmdb.org/t/p/original${card?.data?.backdrop_path}`}
               alt="Shoes"
