@@ -4,7 +4,7 @@ import App from "../assets/available-on-the-app-store.svg";
 const Footer = () => {
   return (
     <footer className="bg-[#0b0a0a]">
-      <div className="max-w-7xl mx-auto px-8 py-16">
+      <div className="max-w-7xl mx-auto px-8 py-16 bg-red-500">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
             <div className="flex flex-wrap items-center justify-start gap-6 mb-3">
