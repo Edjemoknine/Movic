@@ -103,7 +103,7 @@ const TvShows = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-8 py-16">
+      <div className=" px-8 py-16">
         <div className="flex flex-col md:flex-row mb-4 justify-between items-center">
           <h1 className="text-4xl font-bold my-6">Discover Movies</h1>
           <select
