@@ -30,7 +30,7 @@ const TvShows = () => {
     return (
       <>
         <BannerSkelton />
-        <div className="max-w-6xl mx-auto px-8 py-16">
+        <div className=" px-8 py-16">
           <div className="my-6">
             <Skeleton width={300} height={20} borderRadius={20} />
           </div>
