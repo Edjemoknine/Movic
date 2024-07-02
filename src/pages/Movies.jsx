@@ -26,7 +26,7 @@ const Movies = () => {
     return (
       <>
         <BannerSkelton />
-        <div className="max-w-6xl mx-auto px-8 py-16">
+        <div className="px-8 py-16">
           <Skeleton width={300} height={20} borderRadius={20} />
           <div
             className="grid md:grid-cols-4 sm:grid-cols-2 gap-3
